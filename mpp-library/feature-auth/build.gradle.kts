@@ -5,6 +5,9 @@
 
  android {
      compileSdk = 30
+     defaultConfig {
+         minSdk = 16
+     }
 
      sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
  }
@@ -24,4 +27,8 @@
              implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.5.30")
          }
      }
+ }
+
+ dependencies {
+     commonMainApi("dev.icerock.moko:mvvm-core:0.11.0")
  }

@@ -9,6 +9,14 @@ repositories {
 
 android {
     compileSdk = 30
+
+    defaultConfig {
+        minSdk = 16
+    }
+
+    lint {
+        isAbortOnError = false
+    }
 }
 
 dependencies {
