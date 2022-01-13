@@ -15,22 +15,13 @@
  }
 
  kotlin {
-     ios {
-         binaries {
-             framework("MultiPlatformLibrary")
-         }
-     }
-     
+     ios()
      android()
-
-     sourceSets.configureEach { println("Configure: $name") }
 
      sourceSets {
          val commonMain by getting
          commonMain.dependencies {
              implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.5.30")
-             implementation(project(":mpp-library:feature-auth"))
-             implementation(project(":mpp-library:feature-profile"))
          }
      }
  }
