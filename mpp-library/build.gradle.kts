@@ -20,7 +20,11 @@
  kotlin {
      ios {
          binaries {
-             framework("MultiPlatformLibrary")
+             framework("MultiPlatformLibrary") {
+                 export(project(":mpp-library:feature-auth"))
+                 export(project(":mpp-library:feature-profile"))
+                 export("dev.icerock.moko:mvvm-core:0.11.0")
+             }
          }
      }
      
