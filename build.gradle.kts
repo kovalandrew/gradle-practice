@@ -6,15 +6,17 @@
  */
 
 plugins {
-    kotlin("multiplatform") version("1.5.30") apply(false)
+    kotlin("multiplatform") version("1.6.10") apply(false)
 }
 
 buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
+        classpath("dev.icerock:mobile-multiplatform:0.13.0")
         classpath("com.android.tools.build:gradle:7.0.4")
     }
 }
