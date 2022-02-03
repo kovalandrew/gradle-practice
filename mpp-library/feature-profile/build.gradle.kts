@@ -20,15 +20,9 @@
  kotlin {
      ios()
      android()
-
-     sourceSets {
-         val commonMain by getting
-         commonMain.dependencies {
-             implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10")
-         }
-     }
  }
 
  dependencies {
-     commonMainApi("dev.icerock.moko:mvvm-core:0.11.0")
+     commonMainImplementation(Deps.stdLib)
+     commonMainApi(Deps.mokoMvvmCore)
  }

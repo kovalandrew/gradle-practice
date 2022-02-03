@@ -25,9 +25,9 @@
      sourceSets {
          val commonMain by getting
          commonMain.dependencies {
-             implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10")
-             api(project(":mpp-library:feature-auth"))
-             api(project(":mpp-library:feature-profile"))
+             implementation(Deps.stdLib)
+             api(project(Modules.featureAuth))
+             api(project(Modules.featureProfile))
          }
      }
  }
@@ -49,7 +49,7 @@
      }
  }
  framework {
-     export(project = project(":mpp-library:feature-auth"))
-     export(project = project(":mpp-library:feature-profile"))
-     export("dev.icerock.moko:mvvm-core:0.11.0")
+     export(project = project(Modules.featureAuth))
+     export(project = project(Modules.featureProfile))
+     export(Deps.mokoMvvmCore)
  }

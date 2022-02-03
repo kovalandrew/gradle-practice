@@ -5,22 +5,6 @@
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/7.3.1/samples
  */
 
-plugins {
-    kotlin("multiplatform") version("1.6.10") apply(false)
-}
-
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-    dependencies {
-        classpath("dev.icerock:mobile-multiplatform:0.13.0")
-        classpath("com.android.tools.build:gradle:7.0.4")
-    }
-}
-
 repositories {
     mavenCentral()
 }
