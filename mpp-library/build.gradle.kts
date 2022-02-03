@@ -30,22 +30,24 @@
              api(project(":mpp-library:feature-profile"))
          }
      }
+ }
+ allprojects {
+     tasks.create("PrintSourceSets") {
+         group = "source-sets-printer"
 
-     allprojects {
-         tasks.create("PrintSourceSets") {
-             group = "source-sets-printer"
+         doFirst {
+             // Добавить проверку, что есть multiplatform плагин
+             // Если есть, тогда вызывать блок котлин
+             // Утащить это в корневой билд градл ктс
 
-             doFirst {
-                 println("=== SOURCE SETS PRINTER 2000 ===")
-                 kotlin {
-                     sourceSets.forEach { println("SourceSet name: ${it.name}") }
-                     println("=== SOURCE SETS END. TOTAL: ${kotlin.sourceSets.size} ITEMS ===")
-                 }
+             println("=== SOURCE SETS PRINTER 2000 ===")
+             kotlin {
+                 this.sourceSets.forEach { println("SourceSet name: ${it.name}") }
+                 println("=== SOURCE SETS END. TOTAL: ${this.sourceSets.size} ITEMS ===")
              }
          }
      }
  }
-
  framework {
      export(project = project(":mpp-library:feature-auth"))
      export(project = project(":mpp-library:feature-profile"))
