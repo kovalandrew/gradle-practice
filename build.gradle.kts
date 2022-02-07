@@ -16,8 +16,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath("dev.icerock:mobile-multiplatform:0.13.0")
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath(":composite-project")
     }
 }
 

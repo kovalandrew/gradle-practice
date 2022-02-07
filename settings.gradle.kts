@@ -9,6 +9,8 @@
 
 rootProject.name = "gradle-test-project"
 
+includeBuild("composite-project")
+
 include(":android-app")
 include(":mpp-library")
 include(":mpp-library:feature-auth")

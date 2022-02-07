@@ -1,17 +1,8 @@
  plugins {
-     kotlin("multiplatform")
-     id("com.android.library")
+     id("android-conventions")
+     id("org.jetbrains.kotlin.multiplatform")
      id("dev.icerock.mobile.multiplatform.ios-framework")
 }
-
- android {
-     compileSdk = 30
-     defaultConfig {
-         minSdk = 16
-     }
-
-     sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
- }
 
  repositories {
      mavenCentral()
