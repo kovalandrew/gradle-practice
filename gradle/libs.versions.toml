@@ -1,0 +1,7 @@
+[versions]
+kotlin = "1.6.10"
+mokoMvvm = "0.11.0"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-common", version.ref = "kotlin" }
+moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mokoMvvm" }

@@ -20,5 +20,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":mpp-library"))
+    implementation(projects.mppLibrary)
 }

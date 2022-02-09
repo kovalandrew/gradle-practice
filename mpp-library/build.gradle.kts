@@ -21,16 +21,17 @@
  kotlin {
      ios()
      android()
+ }
 
-     sourceSets {
-         val commonMain by getting
-         commonMain.dependencies {
-             implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10")
-             api(project(":mpp-library:feature-auth"))
-             api(project(":mpp-library:feature-profile"))
-         }
+ dependencies {
+     dependencies {
+         commonMainImplementation(libs.kotlin.stdlib)
+
+         commonMainApi(projects.mppLibrary.featureAuth)
+         commonMainApi(projects.mppLibrary.featureProfile)
      }
  }
+
  allprojects {
      tasks.create("PrintSourceSets") {
          group = "source-sets-printer"
@@ -49,7 +50,7 @@
      }
  }
  framework {
-     export(project = project(":mpp-library:feature-auth"))
-     export(project = project(":mpp-library:feature-profile"))
-     export("dev.icerock.moko:mvvm-core:0.11.0")
+     export(projects.mppLibrary.featureAuth)
+     export(projects.mppLibrary.featureProfile)
+     export(libs.moko.mvvm.core)
  }
